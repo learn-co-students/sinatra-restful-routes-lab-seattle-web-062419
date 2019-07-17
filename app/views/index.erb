@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+</style>
+</head>
+<body>
+<h1>All recipes</h1>
+<br>
+<% Recipe.all.each do |r| %>
+Name: <%= r.name %>
+<br>
+Ingredients: <%= r.ingredients %>
+<br>
+Cook time: <%= r.cook_time %>
+<hr>
+<% end %>
+
+<h2> All Recipes</h2>
+<% Recipe.all.each do |r| %>
+<a href="/recipes/<%=r.id%>"><%=r.name%></a>
+<br>
+<%end%>
+</body>
+</html>
